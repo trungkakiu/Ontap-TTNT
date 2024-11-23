@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ôn tập cuối học phần</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Ôn tập cuối học phần</h1>
+    <div class="button-container">
+        <button onclick="startExam('TTHCM')">Tư tưởng Hồ Chí Minh</button>
+        <button onclick="startExam('TTNT')">Trí tuệ nhân tạo</button>
+    </div>
+
+    <div class="customize-options-container">
+        <div class="question-count-container">
+            <label for="question-count">Số lượng câu hỏi:</label>
+            <select id="question-count" onchange="saveQuestionCount()">
+                <option value="10">10</option>
+                <option value="20">20</option>
+                <option value="30">30</option>
+                <option value="40">40</option>
+                <option value="50">50</option>
+                <option value="all">Tất cả</option>
+            </select>
+        </div>
+
+        <div class="shuffle-answers-container">
+            <label for="shuffle-answers">Đảo câu trả lời:</label>
+            <input type="checkbox" id="shuffle-answers" onchange="saveShuffleAnswers()">
+        </div>
+    </div>
+
+    <div id="questions" class="question-container"></div>
+    <button id="submit-btn" onclick="submitExam()" style="display:none;">Nộp bài</button>
+
+    <div id="result-popup" class="result-popup-container">
+        <div class="result-popup-box">
+            <h1>Kết quả</h1>
+            <p class="score-text" id="popup-score"></p>
+            <p class="score-text" id="popup-detail"></p>
+            <button onclick="showResultPopup(false)" class="popup-close-button">Đóng</button>
+        </div>
+    </div>
+    
+    <div id="result" class="result-container" style="display:none;">
+        <p class="score-text" id="score"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
